@@ -1,0 +1,12 @@
+.blog-author{
+  display: block;
+  color: #9a9a9a;
+  margin-top: -0.5rem;
+  margin-bottom: 1rem;
+}
+.move-left{
+  float:right;
+}
+.mat-spinner-color::ng-deep circle{
+  stroke: rgb(0, 71, 179) !important;
+}

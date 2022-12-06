@@ -1,0 +1,24 @@
+.my-form{
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.full-width {
+  width: 90%;
+}
+
+.move-left{
+  float:right;
+}
+
+.blog-author{
+  display: block;
+  color: #9a9a9a;
+  margin-top: -0.5rem;
+  margin-bottom: 1rem;
+}
+.mat-spinner-color::ng-deep circle{
+  stroke: rgb(0, 71, 179) !important;
+}
+

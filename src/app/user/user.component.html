@@ -1,0 +1,90 @@
+<div class="card">
+
+  <div class="card-header">
+    My Blogs
+  </div>
+
+  <mat-form-field appearance="fill" class="full-width container-fluid" style="margin-top: 0.5%; margin-bottom: 0.5%;">
+    <mat-label>Search Blog</mat-label>
+    <input [(ngModel)]="listFilter" matInput   placeholder="Search Blog" name="Search Blog" />
+  </mat-form-field>
+
+<div *ngIf="isLoading || isDeleting" style="display: flex; justify-content: center; align-items: center; background: white;">
+  <mat-progress-spinner  class="mat-spinner-color" mode="indeterminate">
+  </mat-progress-spinner>
+</div>
+
+<div class="container-fluid"  *ngIf='blogs.length'>
+  <div class="card" *ngFor='let blog of filteredBlog'>
+    <h3 class="card-header">{{blog.heading}}
+      <div class="move-left">
+      <button mat-icon-button class="edit-options-btn" [routerLink]="['/blog',blog.id]" matSuffix>
+        <mat-icon aria-label="Edit" class="edit-icon" title="Edit">edit</mat-icon>
+      </button>
+      <button mat-icon-button class="remove-options-btn" (click)="deleteBlog(blog.id)" fragment="remove" matSuffix>
+        <mat-icon aria-label="Remove" class="remove-icon" title="Delete">delete</mat-icon>
+      </button>
+    </div>
+    </h3>
+    <div class="card-body">
+      <!-- <h4 class="card-title">{{blog.heading}}</h4> -->
+      <div class="card-subtitle mb-2 text-muted">By {{blog.autherName}} {{blog.timeToRead}} min read</div>
+      <p class="card-text">{{blog.shortIntro}}</p>
+      <a [routerLink]="['/blogs', blog.id]">Read more...</a>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<div class="card">
+
+  <div class="card-header">
+    My Information
+  </div>
+
+  <div class="card-body">
+    <div class="container-fluid">
+
+        <mat-card-content>
+           <form [formGroup]="userInfoForm" class="my-form">
+
+              <mat-form-field appearance="fill" class="full-width">
+                <mat-label>Name</mat-label>
+                <input formControlName="name" matInput  placeholder="Name" name="Name">
+              </mat-form-field>
+
+              <mat-form-field appearance="fill" class="full-width">
+                <mat-label>Email</mat-label>
+                <input formControlName="emailId" matInput  placeholder="Email" name="email">
+             </mat-form-field>
+
+
+              <mat-form-field appearance="fill" class="full-width" >
+                <mat-label>Password</mat-label>
+                <input formControlName="password" matInput [type]="hide ? 'password' : 'text'"   placeholder="Password" name="password" required>
+                <mat-error *ngIf="myError('password', 'required')">Password is required</mat-error>
+                 <mat-error *ngIf="myError('password', 'maxlength')">Limit exceed</mat-error>
+                 <mat-hint>Not more then 15 characters long.</mat-hint>
+                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                  <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
+              </mat-form-field>
+              <span>
+                  <button mat-icon-button class="edit-options-btn" (click)="updatePassword()" matSuffix>
+                    <mat-icon aria-label="Save" class="edit-icon" title="Save">save</mat-icon>
+                  </button>
+              </span>
+
+            <div *ngIf="isPasswordUpdating" style="display: flex; justify-content: center; align-items: center; background: white;">
+              <mat-progress-spinner  class="mat-spinner-color" mode="indeterminate">
+              </mat-progress-spinner>
+            </div>
+
+           </form>
+        </mat-card-content>
+
+    </div>
+  </div>
+
+</div>

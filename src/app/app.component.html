@@ -1,0 +1,18 @@
+<!-- <nav class='navbar navbar-expand navbar-light bg-light'>
+  <ul class='nav nav-pills'>
+    <li><a class='nav-link' routerLink='/home'>Home</a></li>
+    <li><a class='nav-link' routerLink='/blogs'>Blogs</a></li>
+  </ul>
+</nav>
+<div class='container'>
+  <router-outlet></router-outlet>
+</div> -->
+<!-- <mat-slide-toggle>Toggle me!</mat-slide-toggle> -->
+<!-- <tb-user-authentication></tb-user-authentication> -->
+
+<div *ngIf="flag">
+  <tb-index></tb-index>
+</div>
+<div *ngIf="!flag">
+  <tb-user-authentication></tb-user-authentication>
+</div>

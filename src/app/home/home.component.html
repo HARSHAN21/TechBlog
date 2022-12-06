@@ -1,0 +1,28 @@
+<div class="card">
+  <div class="card-header">
+    Welcome to Tech Blog
+  </div>
+  <div class="card-body">
+    <div class="container-fluid">
+      <div class="text-center gif-fit">
+        <img src="./assets/gifs/phoneLogoGif2.gif"
+             class="img-responsive center-block"
+             style="max-height:300px;padding-bottom:50px" *ngIf="androidDevice"/>
+
+        <img src="./assets/gifs/newLogoGif.gif"
+             class="img-responsive center-block"
+             style="max-height:300px;padding-bottom:50px" *ngIf="!androidDevice"/>
+      </div>
+
+      <div class="text-center">Developed by:</div>
+      <div class="text-center">
+        <h3>Harshan Sarvaiya</h3>
+      </div>
+
+      <div class="text-center">@harshanSarvaiya</div>
+      <div class="text-center">
+        <a href="http://www.bit.ly/DeborahKsBlog">www.comming Soon</a>
+      </div>
+    </div>
+  </div>
+</div>

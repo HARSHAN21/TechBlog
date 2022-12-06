@@ -1,0 +1,59 @@
+<div class="card">
+
+  <div class="card-header">
+    Add new Blog
+  </div>
+
+  <div class="card-body container-fluid" >
+
+        <mat-card-content>
+           <form [formGroup]="addBlogForm" class="my-form">
+
+              <mat-form-field appearance="fill" class="full-width">
+                  <mat-label>Heading</mat-label>
+                  <textarea formControlName="heading" matInput  placeholder="heading" name="heading" required></textarea>
+                  <mat-hint align="end">Not more then 50 characters long.</mat-hint>
+                  <mat-error *ngIf="myError('heading', 'required')">Heading is required</mat-error>
+                  <mat-error *ngIf="myError('heading', 'maxlength')">Limit exceed</mat-error>
+              </mat-form-field>
+
+              <mat-form-field appearance="fill" class="full-width">
+                <mat-label>Content</mat-label>
+                <textarea formControlName="content" matInput   placeholder="content" name="content" required></textarea>
+                <mat-hint align="end">Not more then 500 characters long.</mat-hint>
+                <mat-error *ngIf="myError('content', 'required')">Content is required</mat-error>
+                <mat-error *ngIf="myError('content', 'maxlength')">Limit exceed</mat-error>
+              </mat-form-field>
+
+              <mat-form-field appearance="fill" class="full-width">
+                <mat-label>Short Intro</mat-label>
+                <textarea formControlName="shortIntro" matInput   placeholder="shortIntro" name="shortIntro" required></textarea>
+                <mat-hint align="end">Not more then 100 characters long.</mat-hint>
+                <mat-error *ngIf="myError('shortIntro', 'required')">Short Intro is required</mat-error>
+                <mat-error *ngIf="myError('shortIntro', 'maxlength')">Limit exceed</mat-error>
+              </mat-form-field>
+
+              <mat-form-field appearance="fill" class="full-width">
+                <mat-label>Time To Read</mat-label>
+                <input type="number" formControlName="timeToRead" matInput  placeholder="timeToRead" name="timeToRead" min="1" max="15" required>
+                <span matTextSuffix>min</span>
+                <mat-hint align="end">Should be range from 1 to 15 minutes.</mat-hint>
+                <mat-error *ngIf="myError('timeToRead', 'required')">Time To Read is required</mat-error>
+                <mat-error *ngIf="myError('timeToRead', 'min') || myError('timeToRead', 'max')">Limit exceed</mat-error>
+              </mat-form-field>
+
+              <mat-card-actions>
+                <button mat-raised-button (click)="addBlog()" class="bt-theme">Add</button>
+              </mat-card-actions>
+
+           </form>
+        </mat-card-content>
+
+        <div *ngIf="isLoading" style="display: flex; justify-content: center; align-items: center; background: white;">
+          <mat-progress-spinner  class="mat-spinner-color" mode="indeterminate">
+          </mat-progress-spinner>
+        </div>
+
+    </div>
+
+</div>

@@ -1,0 +1,25 @@
+
+<!-- <nav class='navbar navbar-expand navbar-light bg-light'>
+  <div class='nav nav-pills'>
+    <div><a class='nav-link' routerLink='/registration'>Registration</a></div>
+    <div><a class='nav-link' routerLink='/login'>Login</a></div>
+  </div>
+</nav> -->
+<mat-toolbar >
+  <mat-toolbar-row>
+
+    <a class='nav-link nav-opt' routerLink='/registration' mat-list-item >
+      <button mat-icon-button><mat-icon title="Registration">person_add</mat-icon></button>
+      <!-- <br style="margin-top: 0%; margin-bottom: 0%;">
+      <label style="font-size: small; margin-bottom: 0%; margin-top: 0%;">Login</label> -->
+    </a>
+
+    <a class='nav-link nav-opt' routerLink='/login' mat-list-item >
+      <button mat-icon-button><mat-icon title="Login">login</mat-icon></button>
+    </a>
+
+  </mat-toolbar-row>
+</mat-toolbar>
+<div class='container'>
+  <router-outlet></router-outlet>
+</div>

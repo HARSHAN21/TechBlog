@@ -1,0 +1,34 @@
+[
+  {
+    "id":1,
+    "heading": "Heading of first Blog",
+    "content": "content of first Blog",
+    "author": "Harshan Sarvaiya",
+    "shortIntro": "Intro of first Blog",
+    "timeToRead": 3
+    },
+    {
+      "id":2,
+      "heading": "Heading of second Blog",
+      "content": "conrent of second Blog",
+      "author": "Harshan sarvaiya",
+      "shortIntro": "Intro of second Blog",
+      "timeToRead": 5
+    },
+    {
+      "id":3,
+      "heading": "Heading of third Blog",
+      "content": "content of third Blog",
+      "author": "Harshan Sarvaiya",
+      "shortIntro": "Intro of third Blog",
+      "timeToRead": 3
+      },
+      {
+        "id":4,
+        "heading": "Heading of four Blog",
+        "content": "conrent of four Blog",
+        "author": "Harshan sarvaiya",
+        "shortIntro": "Intro of four Blog",
+        "timeToRead": 5
+      }
+]

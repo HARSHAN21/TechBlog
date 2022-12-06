@@ -1,0 +1,39 @@
+<!-- <div class='container'>
+  <div class='row'>
+    <div class='col-md-2'>Filter by:</div>
+    <div class='col-md-4'>
+      <input type='text' [(ngModel)]="listFilter"/>
+    </div>
+  </div>
+</div> -->
+
+<mat-form-field appearance="fill" class="full-width container-fluid" style="margin-top: 0.5%; margin-bottom: 0.5%;">
+  <mat-label>Search Blog</mat-label>
+  <input [(ngModel)]="listFilter" matInput   placeholder="Search Blog" name="Search Blog" />
+</mat-form-field>
+
+<div *ngIf="isLoading || isDeleting" style="display: flex; justify-content: center; align-items: center; background: white;">
+  <mat-progress-spinner  class="mat-spinner-color" mode="indeterminate">
+  </mat-progress-spinner>
+</div>
+
+<div class="container-fluid"  *ngIf='blogs.length'>
+  <div class="card" *ngFor='let blog of filteredBlog'>
+    <h3 class="card-header"><b>{{blog.heading}}</b>
+    <!-- <div class="move-left">
+      <button mat-icon-button class="edit-options-btn" [routerLink]="['/blog',blog.id]" matSuffix>
+        <mat-icon aria-label="Edit" class="edit-icon" title="Edit">edit</mat-icon>
+      </button>
+      <button mat-icon-button class="remove-options-btn" (click)="deleteBlog(blog.id)" fragment="remove" matSuffix>
+        <mat-icon aria-label="Remove" class="remove-icon" title="Delete">delete</mat-icon>
+      </button>
+    </div> -->
+    </h3>
+    <div class="card-body">
+      <!-- <h4 class="card-title">{{blog.heading}}</h4> -->
+      <div class="card-subtitle mb-2 text-muted">By {{blog.autherName}} {{blog.timeToRead}} min read</div>
+      <h4 class="card-text">{{blog.shortIntro}}</h4>
+      <a [routerLink]="['/blogs', blog.id]">Read more...</a>
+    </div>
+  </div>
+</div>
