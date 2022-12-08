@@ -1,11 +1,11 @@
 # TechBlog
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.0.4.\n
-TechBlog is a Web App for user to create, update & delete blog(s)
-User can also read the blog of other users, they can also search blog of their required topic. 
-Angular is used to create the user interface of TechBlog & Spring boot is used for back-end.
-This repository is front-end code of TechBlog.
-https://github.com/HARSHAN21/TechBlog-API is back-end repo of TechBlog
+•	This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.0.4.
+•	TechBlog is a Web App for user to create, update & delete blog(s).
+•	User can also read the blog of other users, they can also search blog of their required topic. 
+•	Angular is used to create the user interface of TechBlog & Spring boot is used for back-end.
+•	This repository is front-end code of TechBlog.
+•	https://github.com/HARSHAN21/TechBlog-API is back-end repository of TechBlog.
 
 ## Local Development server
 
